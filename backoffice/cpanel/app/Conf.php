@@ -17,5 +17,5 @@ if($host == 'localhost'){
     define('HOST', 'localhost');
     define('USER', 'cearamir_admin');
     define('PASS', 'CearaPM@2017');
-    define('BD', 'cearamir_pdc"');
+    define('BD', 'cearamir_pdc');
 }

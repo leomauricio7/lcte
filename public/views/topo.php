@@ -14,10 +14,10 @@
     <div class="container"> 
     <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="fa fa-bar"></span><span class="fa fa-bar"></span><span class="fa fa-bar"></span> </a>
     <a class="brand" href="<?php echo Url::getBase() ?>">
-      <img src="<?php echo Url::getBase() ?>public/img/logo-icon.png">   
+      <img src="<?php echo Url::getBase() ?>public/img/logoLCT.png">   
      
     </a> 
-    <img src="<?php echo Url::getBase() ?>public/img/logoLCT.png" style="float: right">
+    <img src="<?php echo Url::getBase() ?>public/img/logo-icon.png" style="float: right">
       <!--/.nav-collapse --> 
     </div>
     <!-- /container --> 

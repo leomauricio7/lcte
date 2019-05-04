@@ -71,8 +71,8 @@ textarea {
 
 .navbar-inner {
 	padding: 7px 0;
-	/* background: #00ba8b !important; */
-	background-image: url('../../backoffice/img/fundo_login.png');
+	 background: #00ba8b !important;
+	/* background-image: url('../../backoffice/img/fundo_login.png'); */
 	background-size: cover;
 	background-position: bottom;
 	-moz-border-radius: 0;
@@ -1285,19 +1285,21 @@ color: #333;
 	
 }
 
-.btn-success{
+/* .btn-success{
 	background-color: #22647d;
 }
 .btn-success:hover{
 	background-color: #163541;
 }
+*/
 .shortcuts a{
 	background-color: #f5f5f5!important;
-	color: #1f5c73;
+	color: #000;
 }
+/*
 .shortcuts a:hover{
 	background-color: #215f79!important;
 	color: #fff;
-}
+} */
 
 
