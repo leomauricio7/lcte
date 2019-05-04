@@ -72,17 +72,22 @@ $tipoUser = $_SESSION['idTipo'];
         </script>
         <!-- função para validas as senhas -->
         <script>
-            var password = document.getElementById("password"), confirm_password = document.getElementById("confirm_password");
-            function validatePassword() {
-                if (password.value != confirm_password.value) {
-                    confirm_password.setCustomValidity("Senhas não coincidem!");
-                } else {
-                    confirm_password.setCustomValidity('');
+            if($("#password").length) { 
+                console.log()
+                var password = document.getElementById("password"), confirm_password = document.getElementById("confirm_password");
+                function validatePassword() {
+                    if (confirm_password.value != '' && password.value != confirm_password.value) {
+                        //confirm_password.setCustomValidity("Senhas não coincidem!");
+                        $('[data-toggle="info-confirm-senha"]').popover('show')
+                    } else {
+                        //confirm_password.setCustomValidity('');
+                        $('[data-toggle="info-confirm-senha"]').popover('dispose')
+                    }
                 }
-            }
 
-            password.onchange = validatePassword;
-            confirm_password.onkeyup = validatePassword;
+                password.onchange = validatePassword;
+                confirm_password.onkeyup = validatePassword;
+            }
         </script>
         <script>
             $(document).ready(function () {

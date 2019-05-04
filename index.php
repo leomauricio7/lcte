@@ -10,7 +10,7 @@ require_once('./cpanel/vendor/autoload.php');
         <meta name="description" content="Sistema de Licitação para entidades publicas">
         <meta name="author" content="Leonardo Mauricio - Ltec">
         <link rel="icon" href="<?php echo Url::getBase()?>img/favicon.png">
-        <title>LCT-e - Painel Administrativo</title>
+        <title>LCT-e | Painel Administrativo</title>
         <!-- Bootstrap core CSS -->
         <!-- <link href="<?php echo Url::getBase()?>css/bootstrap.min.css" rel="stylesheet"> -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
