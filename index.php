@@ -1,7 +1,7 @@
 <?php 
   require_once('./backoffice/cpanel/app/Conf.php');
   require_once('./backoffice/cpanel/vendor/autoload.php');
-  Validation::ForceHTTPS();
+  //Validation::ForceHTTPS();
  ?>
 
 <!DOCTYPE html>

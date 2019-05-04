@@ -15,7 +15,7 @@
                   href="<?php echo Url::getBase().'licitacao/'.$pasta ?>"
                   class="shortcut">
                   <i class="fa fa-book-open"></i>
-                  <?php echo $tipo ?></span> </a>
+                  <?php echo utf8_encode($tipo) ?></span> </a>
                 <?php } ?>
               </div>
             </div>
@@ -45,7 +45,7 @@
                         <?php foreach(Licitacao::getTipoLicitacoes() as $dados){
                             extract($dados);
                         ?>
-                            <option value="<?php echo $pasta ?>"><?php echo $tipo ?></option>
+                            <option value="<?php echo $pasta ?>"><?php echo utf8_encode($tipo) ?></option>
                         <?php } ?>
                     </select>                  
                     
@@ -81,7 +81,7 @@
                         <span class="news-item-day"><?php echo $dia; ?></span> <span class="news-item-month"><?php echo $mes; ?></span>
                     </div>
                     <div class="news-item-detail">
-                        <a href="licitacao-view/<?php echo $pasta.'/'.$id; ?>" class="news-item-title"><?php echo $tipo_edital; ?></a>
+                        <a href="licitacao-view/<?php echo $pasta.'/'.$id; ?>" class="news-item-title"><?php echo utf8_encode($tipo_edital); ?></a>
                         <p class="news-item-preview"><?php echo $descricao; ?></p>
                     </div> 
                 </li>

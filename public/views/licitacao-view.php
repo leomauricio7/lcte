@@ -3,7 +3,7 @@
     <!-- /widget -->
     <div class="widget widget-table action-table">
       <div class="widget-header"> <i class="fa fa-group"></i>
-        <h3>Modalidade: <?php echo Licitacao::getNameTipo(Url::getURL(1)) ?></h3>
+        <h3>Modalidade: <?php echo utf8_encode(Licitacao::getNameTipo(Url::getURL(1))) ?></h3>
       </div>
       <!-- /widget-header -->
       <div class="widget-content">
@@ -37,7 +37,7 @@
   <div class="span12">
       <div class="widget widget-nopad">
         <div class="widget-header"> 
-          <h3><i class="fa fa-list-alt"></i> Últimos Certames da Modalidade: <?php echo $edital[0]['tipo_edital']; ?></h3>
+          <h3><i class="fa fa-list-alt"></i> Últimos Certames da Modalidade: <?php echo utf8_encode($edital[0]['tipo_edital']); ?></h3>
         </div>
         <!-- /widget-header -->
         <div class="widget-content">
@@ -48,7 +48,7 @@
               ?>
             <li>    
               <div class="news-item-date"> <span class="news-item-day"><?php echo $dia ?></span> <span class="news-item-month"><?php echo $mes ?></span> </div>
-              <div class="news-item-detail"> <a href="<?php echo Url::getBase() ?>licitacao-view/<?php echo $pasta.'/'.$id ?>" class="news-item-title"><?php echo $tipo_edital; ?></a>
+              <div class="news-item-detail"> <a href="<?php echo Url::getBase() ?>licitacao-view/<?php echo $pasta.'/'.$id ?>" class="news-item-title"><?php echo utf8_encode($tipo_edital); ?></a>
               <p class="news-item-preview"><?php echo $descricao; ?></p>
               </div> 
             </li>

@@ -24,7 +24,7 @@
                       <?php foreach(Licitacao::getTipoLicitacoes() as $dados){
                           extract($dados);
                       ?>
-                          <option value="<?php echo $pasta ?>"><?php echo $tipo ?></option>
+                          <option value="<?php echo $pasta ?>"><?php echo utf8_encode($tipo) ?></option>
                       <?php } ?>
                   </select>                  
                   

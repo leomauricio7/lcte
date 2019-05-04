@@ -4,7 +4,7 @@
           <!-- /widget -->
           <div class="widget widget-table action-table">
             <div class="widget-header"> <i class="icon-group"></i>
-              <h3><?php echo Licitacao::getNameTipo(Url::getURL(1)); ?></h3>
+              <h3><?php echo utf8_encode(Licitacao::getNameTipo(Url::getURL(1))) ?></h3>
             </div>
             <!-- /widget-header -->
             <div class="widget-content">
