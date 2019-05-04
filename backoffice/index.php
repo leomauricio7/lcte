@@ -1,5 +1,5 @@
 <?php
-require_once('./cpanel/app/Conf.inc');
+require_once('./cpanel/app/Conf.php');
 require_once('./cpanel/vendor/autoload.php');
 ?>
 <!doctype html>

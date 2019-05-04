@@ -1,5 +1,5 @@
 <?php
-require_once('./app/Conf.inc');
+require_once('./app/Conf.php');
 require_once('./vendor/autoload.php');
 Validation::validaSession();
 Validation::validaSession();
