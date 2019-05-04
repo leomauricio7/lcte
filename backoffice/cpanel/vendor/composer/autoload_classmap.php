@@ -11,6 +11,8 @@ return array(
     'Data' => $baseDir . '/app/Class/Data.class.php',
     'Delete' => $baseDir . '/app/Conn/Delete.class.php',
     'Edital' => $baseDir . '/app/Class/Edital.class.php',
+    'Email' => $baseDir . '/app/Class/Email.class.php',
+    'Licitacao' => $baseDir . '/app/Class/Licitacao.class.php',
     'Read' => $baseDir . '/app/Conn/Read.class.php',
     'Update' => $baseDir . '/app/Conn/Update.class.php',
     'Uploud' => $baseDir . '/app/Helpers/Uploud.class.php',

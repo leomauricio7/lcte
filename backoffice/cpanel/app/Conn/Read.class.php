@@ -25,6 +25,14 @@ class Read extends Conn {
         $this->ExecuteSQL();
     }
 
+    public function getLicitacoes($Termos = null) {
+        if (empty($Termos)):
+            $Termos = '';
+        endif;
+        $this->Select = 'SELECT e.id, e.ano, e.lei, e.id_tipo, e.dataRetirada, e.horaCertame, e.dataCertame, e.descricao, e.link_aviso, e.link_edital, e.termo_adesao, e.contrato, e.created, e.tags, e.dia, e.mes, el.tipo as tipo_edital, el.pasta, els.situacao FROM editais e inner join edital_tipo el on e.id_tipo = el.id inner join edital_situacao els on e.id_situacao = els.id '.$Termos;
+        $this->ExecuteSQL();
+    }
+
     public function consulta_pasta($Termos = null) {
         if (empty($Termos)):
             $Termos = '';

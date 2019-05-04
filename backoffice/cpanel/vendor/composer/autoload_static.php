@@ -12,6 +12,8 @@ class ComposerStaticInit4fdf9e5b752dc9170d2c52e6698d1ab2
         'Data' => __DIR__ . '/../..' . '/app/Class/Data.class.php',
         'Delete' => __DIR__ . '/../..' . '/app/Conn/Delete.class.php',
         'Edital' => __DIR__ . '/../..' . '/app/Class/Edital.class.php',
+        'Email' => __DIR__ . '/../..' . '/app/Class/Email.class.php',
+        'Licitacao' => __DIR__ . '/../..' . '/app/Class/Licitacao.class.php',
         'Read' => __DIR__ . '/../..' . '/app/Conn/Read.class.php',
         'Update' => __DIR__ . '/../..' . '/app/Conn/Update.class.php',
         'Uploud' => __DIR__ . '/../..' . '/app/Helpers/Uploud.class.php',
