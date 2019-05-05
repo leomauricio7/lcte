@@ -91,23 +91,22 @@ class Validation extends Conn {
             $_token = hash("sha256", md5(uniqid())); //gerando uma senha aletória para o usuário
             $dados = $rec->fetch(PDO::FETCH_ASSOC);
             $this->setEmail($dados['email']); //pegando o email do usuario
-            //if ($this->enviaEmail($_token, $dados['nome'])) {//enviando o email com a nova senha
-            $update = $pdo->prepare("UPDATE users SET _token = :_token WHERE cpf = :cpf");
-            $update->execute(array(
-                ':cpf' => $this->getCpf(),
-                ':_token' => $_token
-            ));
-            $this->Msg = '<div class="alert alert-success">'
-                    . 'Foi enviado para o email: <strong>' . $this->getEmail() . '</strong> '
-                    . 'um link para recuperação da senha.<br>'
-                    . 'Verifique sua caixa de entrada.<br>Demo: Link temporario:<strong>'
-                    . '<a href="localhost/lcte-v2/recupera-senha?_token=' . $_token . '">localhost/lcte-v2/recupera-senha?_token=' . $_token . '</a></strong>'
-                    . '</div>';
-            return true;
-        //} else {
-        //    $_SESSION['erro'] = '<div class="alert alert-danger"><h5 align="center"><i class="fa fa-warning"></i> Erro ao enviar o email.</h5></div>';
-        //    return false;
-        //}
+            if ($this->enviaEmail($_token, $dados['nome'])) {//enviando o email com a nova senha
+                $update = $pdo->prepare("UPDATE users SET _token = :_token WHERE cpf = :cpf");
+                $update->execute(array(
+                    ':cpf' => $this->getCpf(),
+                    ':_token' => $_token
+                ));
+                $this->Msg = '<div class="alert alert-success">'
+                        . 'Foi enviado para o email: <strong>' . $this->getEmail() . '</strong> '
+                        . 'um link para recuperação da senha.<br>'
+                        . 'Verifique sua caixa de entrada.'
+                        . '</div>';
+                return true;
+            } else {
+                $_SESSION['erro'] = '<div class="alert alert-danger"><h5 align="center"><i class="fa fa-warning"></i> Erro ao enviar o email.</h5></div>';
+                    return false;
+            }
         else:
             $this->Msg = '<div class="alert alert-danger"><h5 align="center"><i class="fa fa-warning"></i> Email ou CPF incorretos.</h5></div>';
             return false;
@@ -118,7 +117,7 @@ class Validation extends Conn {
 
     public function enviaEmail($_token, $user) {
         // emails para quem será enviado o formulário
-        $from = "suporte@lcte.com.br";
+        $from = "lcte@cearamirim.rn.gov.br";
         $assunto = "Solicitação de Recuperação de Senha";
         $destino = $this->getEmail();
         // É necessário indicar que o formato do e-mail é html
@@ -147,7 +146,7 @@ class Validation extends Conn {
                                             <p style="text-align:left; text-ident: 5px;"><span style="font-size:10.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif">Identificamos a solicita&ccedil;&atilde;o de recupera&ccedil;&atilde;o de senha no nosso sistema dia ' . date('d/m/Y H:i') . '.<br />
                                             Solicitamos que verifique os dados abaixo e caso tenha alguma altera&ccedil;&atilde;o acesse (<a href="https://ltec.000webhostapp.com/demo/lcte" target="_blank"><span style="color:blue">https://ltec.000webhostapp.com/demo/lcte</span></a>). </span></span></p>
                                             <p style="text-align:left; text-ident: 5px;"><span style="font-size:10.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif">Para  confirmar a solicitação de recuperação de senha, clique no link abaixo e siga o passo a passo para realizar a recuperação.</span></span></p>
-                                            <a href="https://ltec.000webhostapp.com/demo/lcte/recupera-senha?_token=' . $_token . '">https://ltec.000webhostapp.com/demo/lcte/recupera-senha?_token=' . $_token . '</a>
+                                            <a href="https://licitacao.cearamirim.rn.gov.br/backoffice/recupera-senha?_token=' . $_token . '">https://licitacao.cearamirim.rn.gov.br/backoffice/recupera-senha?_token=' . $_token . '</a>
                                             <p style="text-align:left; text-ident: 5px;"><span style="font-size:10.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif">Caso não tenha feito essa solicitação, desconsidere esse email, o link expirará em 2 horas.</span></span></p>
                                             <p style="text-align:center"><span style="font-size:10.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif">Atenciosamente,</span></span></p>
                                             <p style="text-align:center"><img src="https://ltec.000webhostapp.com/demo/lcte/img/logo-ltec.png" width="100px"></p>
