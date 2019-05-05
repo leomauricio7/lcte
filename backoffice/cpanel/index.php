@@ -31,6 +31,8 @@ $tipoUser = $_SESSION['idTipo'];
 
         <!-- Font Weasome -->
         <link href="<?php echo Url::getBase() . '../css/font-awesome.css'; ?>" rel="stylesheet">
+        <!-- data table -->
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
 
         <!-- Bootstrap 4 -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css" rel="stylesheet"/>
@@ -64,7 +66,7 @@ $tipoUser = $_SESSION['idTipo'];
         <script src="<?php echo Url::getBase() . '../js/jquery.min.js'; ?>" ></script>
         <script src="<?php echo Url::getBase() . '../js/popper.min.js'; ?>"></script>
         <script src="<?php echo Url::getBase() . '../js/bootstrap.min.js'; ?>"></script>
-
+        <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
         <!-- Icons -->
         <script src="<?php echo Url::getBase() . '../js/feather.min.js'; ?>"></script>
         <script>
@@ -91,6 +93,28 @@ $tipoUser = $_SESSION['idTipo'];
         </script>
         <script>
             $(document).ready(function () {
+                $('.table-sort').DataTable({
+                    "language": {
+                            "lengthMenu": "Mostrando _MENU_ registros por página",
+                            "zeroRecords": "Nada encontrado",
+                            "info": "Mostrando de _START_ até _END_ do total de _TOTAL_ licitações - página _PAGE_ de _PAGES_",
+                            "infoEmpty": "Nenhum registro disponível",
+                            "loadingRecords": "Carregando...",
+                            "processing":     "Processando...",
+                            "search":         "Buscar:",
+                            "paginate": {
+                                "first":      "First",
+                                "last":       "Last",
+                                "next":       "Proximo",
+                                "previous":   "Anterior"
+                            },
+                            "aria": {
+                                "sortAscending":  ": ativado ordenação ascendente",
+                                "sortDescending": ": ativado ordenação descendente"
+                            },
+                            "infoFiltered": "(filtrado de _MAX_ registros no total)"
+                        }
+                });
                 //$('#example').DataTable();
                 $("#on").click(function(){;
                     st = $("#doc").is(":visible");

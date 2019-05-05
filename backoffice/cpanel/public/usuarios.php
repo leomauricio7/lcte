@@ -16,7 +16,7 @@
     </div>
 </div>
 <div class="table-responsive">
-    <table class="table table-striped table-sm">
+    <table class="table table-sort table-striped table-sm">
         <thead>
             <tr>
                 <th>ID</th>

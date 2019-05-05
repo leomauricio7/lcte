@@ -33,7 +33,7 @@
                     </div>
                     <div class="media-body" style="margin-left: 5%">
                       <h4 class="media-heading"><?php echo $tipo_edital ?></h4>
-                      <?php echo $descricao ?>
+                      <?php echo utf8_decode($descricao) ?>
                     </div>
                   </div><hr>
                 <?php } ?>

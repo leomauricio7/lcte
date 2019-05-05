@@ -8,7 +8,7 @@
             </div>
             <!-- /widget-header -->
             <div class="widget-content">
-              <table class="table table-striped table-bordered">
+              <table class="table table-sort table-striped table-bordered">
                 <thead>
                   <tr>
                     <th> OBJETO </th>

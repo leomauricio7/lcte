@@ -22,7 +22,7 @@
             <td class="td-actions">
               <a 
               href="<?php echo Url::getBase().'backoffice/cpanel/arquivos/editais/'.$edital[0]['ano'].'/'.$edital[0]['pasta'].'/'.$edital[0]['id'].'/'.$edital[0]['link_aviso']; ?>"
-              target="_blank" 
+              download
               class="btn btn-sm btn-success">
               <i class="fa fa-file-pdf"></i> <?php echo $edital[0]['link_aviso']; ?></a>
             </td>
@@ -31,7 +31,7 @@
               <?php if (date("Y-m-d") < $edital[0]["dataCertame"]){ ?>  
                 <a 
                 href="<?php echo Url::getBase() ?>protocolo-retirada/<?php echo $edital[0]['id']; ?>"
-                target="_blank"
+                download
                 class="btn btn-sm btn-success"
                 >
                   <i class="fa fa-file-pdf"></i> 
@@ -40,9 +40,8 @@
               <?php }else { ?>
                 <a 
                 href="<?php echo Url::getBase().'backoffice/cpanel/arquivos/editais/'.$edital[0]['ano'].'/'.$edital[0]['pasta'].'/'.$edital[0]['id'].'/'.$edital[0]['link_edital']; ?>"
-                target="_blank"
-                class="btn btn-sm btn-success"
                 download
+                class="btn btn-sm btn-success"
                 >
                   <i class="fa fa-file-pdf"></i> 
                   <?php echo $edital[0]['link_edital']; ?>
@@ -58,7 +57,7 @@
                   <a 
                   href="<?php echo Url::getBase().'backoffice/cpanel/arquivos/editais/'.$edital[0]['ano'].'/'.$edital[0]['pasta'].'/'.$edital[0]['id'].'/'.$pdf; ?>"
                   class="btn btn-sm btn-success"
-                  target="_blank">
+                  download>
                   <i class="fa fa-file-pdf"></i> <?php echo $pdf; ?></a> 
                 <?php } ?>
             </td>
@@ -71,7 +70,7 @@
                 <a 
                 href="<?php echo Url::getBase().'backoffice/cpanel/arquivos/editais/'.$edital[0]['ano'].'/'.$edital[0]['pasta'].'/'.$edital[0]['id'].'/'.$pdf; ?>"
                 class="btn btn-sm btn-success"
-                target="_blank">
+                download>
                 <i class="fa fa-file-pdf"></i> <?php echo $pdf; ?></a> 
               <?php } ?>
             </td>
@@ -84,7 +83,7 @@
                 <a 
                 href="<?php echo Url::getBase().'backoffice/cpanel/arquivos/editais/'.$edital[0]['ano'].'/'.$edital[0]['pasta'].'/'.$edital[0]['id'].'/'.$pdf; ?>"
                 class="btn btn-sm btn-success"
-                target="_blank">
+                download>
                 <i class="fa fa-file-pdf"></i> <?php echo $pdf; ?></a> 
               <?php } ?>
             </td>
@@ -97,7 +96,7 @@
                 <a 
                 href="<?php echo Url::getBase().'backoffice/cpanel/arquivos/editais/'.$edital[0]['ano'].'/'.$edital[0]['pasta'].'/'.$edital[0]['id'].'/'.$pdf; ?>"
                 class="btn btn-sm btn-success"
-                target="_blank">
+                download>
                 <i class="fa fa-file-pdf"></i> <?php echo $pdf; ?></a> 
               <?php } ?>
             </td>
@@ -125,7 +124,7 @@
         </thead>
         <tbody>
           <?php 
-            foreach(Licitacao::getARPLicitacao($edital[0]['id']) as $dados){
+            foreach(Licitacao::getDocumentosLicitacao($edital[0]['id']) as $dados){
               extract($dados)
             ?>
               <tr>
@@ -134,7 +133,7 @@
                 <td class="td-actions">
                   <a 
                   href="<?php echo Url::getBase().'backoffice/cpanel/arquivos/editais/'.$edital[0]['ano'].'/'.$edital[0]['pasta'].'/'.$edital[0]['id'].'/'.$pdf; ?>"
-                  target="_blank"
+                  download
                   class="btn btn-sm btn-success">
                   <i class="fa fa-file-pdf"></i> 
                   </a>

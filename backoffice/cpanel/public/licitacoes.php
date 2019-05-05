@@ -41,8 +41,8 @@
             <?php } ?>
         </div>
     </div>
-    <div class="table-responsive">
-        <table class="table table-striped table-sm text-center">
+    <div class="table-responsive ">
+        <table class="table table-sort table-striped table-sm text-center">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -51,7 +51,7 @@
                     <th>Tipo</th>
                     <th>Situação</th>
                     <th>Data Certame</th>
-                    <th>Data da Publicação</th>
+                    <!-- <th>Data da Publicação</th> -->
                     <th></th>
                 </tr>
             </thead>
@@ -69,7 +69,7 @@
                         <td><?php echo utf8_encode($tipo); ?></td>
                         <td><?php echo $situacao; ?></td>
                         <td><?php echo Data::DataFormat($dataCertame); ?></td>
-                        <td><?php echo Data::DataFormat($created); ?></td>
+                        <!-- <td><?php echo Data::DataFormat($created); ?></td> -->
                         <td>
                             <?php if (Validation::verificaPermisao($tipoUser, 'view-licitacao')) { ?> 
                             <a href="<?php echo Url::getBase() . 'view-licitacao/' . $pasta. '/'. $id; ?>" class="btn btn-sm btn-success"> <span class="fa fa-eye-slash"></span> Detalhar</a>
